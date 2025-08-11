@@ -77,6 +77,7 @@
 - [ ] El sistema debe mostrar un mensaje de confirmación al eliminar exitosamente
 
 #### Escenarios de Prueba
+
 - **Escenario 1:** Eliminación exitosa de producto sin pedidos pendientes
 - **Escenario 2:** Intento de eliminación de producto con pedidos pendientes
 - **Escenario 3:** Cancelación de eliminación
@@ -87,11 +88,13 @@
 ## RF1.2 Gestionar categorías y materiales de productos
 
 ### Historia de Usuario RF1.2.1 - Gestionar Categorías
+
 **Como** administrador  
 **Quiero** gestionar las categorías de productos  
 **Para que** pueda clasificar y organizar el catálogo de manera eficiente
 
 #### Criterios de Aceptación
+
 - [ ] Debo poder crear nuevas categorías con nombre y descripción
 - [ ] Debo poder editar categorías existentes
 - [ ] Debo poder eliminar categorías que no estén siendo utilizadas
@@ -100,6 +103,7 @@
 - [ ] El sistema debe mostrar cuántos productos tiene cada categoría
 
 #### Escenarios de Prueba
+
 - **Escenario 1:** Creación exitosa de nueva categoría
 - **Escenario 2:** Intento de crear categoría duplicada
 - **Escenario 3:** Eliminación de categoría sin productos asociados
@@ -108,11 +112,13 @@
 ---
 
 ### Historia de Usuario RF1.2.2 - Gestionar Materiales
+
 **Como** administrador  
 **Quiero** gestionar los materiales de los productos  
 **Para que** pueda especificar correctamente los materiales utilizados en cada producto
 
 #### Criterios de Aceptación
+
 - [ ] Debo poder crear nuevos materiales con nombre y propiedades
 - [ ] Debo poder editar materiales existentes
 - [ ] Debo poder eliminar materiales que no estén siendo utilizados
@@ -136,6 +142,7 @@
 **Para que** los clientes puedan visualizar los productos antes de comprar
 
 #### Criterios de Aceptación
+
 - [ ] Debo poder cargar múltiples imágenes por producto (máximo 5)
 - [ ] El sistema debe aceptar formatos JPG, PNG y WebP
 - [ ] Las imágenes no deben superar los 2MB cada una
@@ -145,6 +152,7 @@
 - [ ] Debo poder cambiar el orden de las imágenes
 
 #### Escenarios de Prueba
+
 - **Escenario 1:** Carga exitosa de imagen válida
 - **Escenario 2:** Intento de carga de archivo con formato no válido
 - **Escenario 3:** Intento de carga de imagen que excede el tamaño máximo
@@ -154,11 +162,13 @@
 ---
 
 ### Historia de Usuario RF1.3.2 - Descripciones Detalladas
+
 **Como** administrador  
 **Quiero** agregar descripciones detalladas a los productos  
 **Para que** los clientes tengan toda la información necesaria sobre cada producto
 
 #### Criterios de Aceptación
+
 - [ ] Debo poder agregar una descripción corta (máximo 200 caracteres)
 - [ ] Debo poder agregar una descripción detallada (máximo 1000 caracteres)
 - [ ] Debo poder especificar dimensiones del producto
@@ -167,6 +177,7 @@
 - [ ] El sistema debe permitir formato básico de texto (negrita, cursiva)
 
 #### Escenarios de Prueba
+
 - **Escenario 1:** Agregado exitoso de descripciones completas
 - **Escenario 2:** Validación de límites de caracteres
 - **Escenario 3:** Uso de formato de texto básico
@@ -179,18 +190,21 @@
 ### RF1.1 Registrar, editar y eliminar productos
 
 #### Entradas
+
 - **Datos del producto:** Nombre, descripción, precio, categoría, material, stock inicial
 - **Imágenes:** Archivos JPG/PNG/WebP (máximo 5, hasta 2MB cada una)
 - **Código de producto:** Generado automáticamente o manual
 - **Usuario autenticado:** Con permisos de administración
 
 #### Salidas
+
 - **Confirmación de registro:** Mensaje de éxito con código de producto generado
 - **Lista actualizada:** Catálogo de productos actualizado
 - **Notificaciones:** Alertas de validación o errores
 - **Logs de auditoría:** Registro de acciones realizadas
 
 #### Procedimiento
+
 1. **Validar autenticación y permisos** del usuario
 2. **Validar datos de entrada** según reglas de negocio
 3. **Verificar unicidad** del código de producto
@@ -205,16 +219,19 @@
 ### RF1.2 Gestionar categorías y materiales
 
 #### Entradas
+
 - **Datos de categoría:** Nombre, descripción, categoría padre (opcional)
 - **Datos de material:** Nombre, propiedades, porcentaje de composición
 - **Usuario autenticado:** Con permisos de administración
 
 #### Salidas
+
 - **Listas actualizadas:** Catálogos de categorías y materiales
 - **Relaciones:** Mapeo de productos con categorías/materiales
 - **Validaciones:** Mensajes de error por duplicados o referencias
 
 #### Procedimiento
+
 1. **Validar permisos** de usuario
 2. **Verificar duplicados** en nombres
 3. **Validar dependencias** antes de eliminaciones
@@ -227,16 +244,19 @@
 ### RF1.3 Cargar imágenes y descripciones detalladas
 
 #### Entradas
+
 - **Archivos de imagen:** JPG, PNG, WebP (máximo 2MB)
 - **Descripciones:** Texto corto (200 chars) y detallado (1000 chars)
 - **Metadatos:** Dimensiones, instrucciones de cuidado, tiempo de fabricación
 
 #### Salidas
+
 - **Imágenes procesadas:** Diferentes tamaños (thumbnail, medium, large)
 - **URLs de acceso:** Rutas públicas a las imágenes
 - **Metadatos estructurados:** Información organizada para búsqueda
 
 #### Procedimiento
+
 1. **Validar formato y tamaño** de archivos
 2. **Procesar imágenes** (redimensionar, comprimir, generar thumbnails)
 3. **Almacenar archivos** en sistema de archivos/cloud

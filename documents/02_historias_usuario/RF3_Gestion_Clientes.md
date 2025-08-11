@@ -190,6 +190,7 @@
 ### RF3.1: Registrar clientes
 
 #### Entradas
+
 - **Información personal:** Nombre completo, documento de identidad, tipo de cliente
 - **Datos de contacto:** Teléfono, email, dirección completa
 - **Información comercial:** Tipo de cliente (individual/empresa), referencias
@@ -197,6 +198,7 @@
 - **Datos opcionales:** Fecha de nacimiento, preferencias, notas adicionales
 
 #### Salidas
+
 - **Código de cliente:** Identificador único generado automáticamente
 - **Perfil completo:** Registro almacenado con toda la información
 - **Confirmación:** Mensaje de registro exitoso o errores de validación
@@ -204,6 +206,7 @@
 - **Índice actualizado:** Base de datos de clientes sincronizada para búsquedas
 
 #### Procedimiento
+
 1. **Validar autenticación** y permisos del usuario operador
 2. **Verificar unicidad** del documento de identidad en la base de datos
 3. **Validar formato** de email, teléfono y otros campos estructurados
@@ -218,12 +221,14 @@
 ### RF3.2: Consultar historial de compras por cliente
 
 #### Entradas
+
 - **Identificador de cliente:** Código, documento o nombre para búsqueda
 - **Filtros temporales:** Rango de fechas, período específico, últimas N compras
 - **Criterios de análisis:** Tipo de producto, categoría, montos, estados de pedido
 - **Parámetros de reporte:** Formato de salida, nivel de detalle, métricas requeridas
 
 #### Salidas
+
 - **Historial cronológico:** Lista completa de pedidos y transacciones
 - **Métricas del cliente:** Total gastado, frecuencia, valor promedio por pedido
 - **Análisis de comportamiento:** Productos favoritos, patrones estacionales, tendencias
@@ -231,6 +236,7 @@
 - **Recomendaciones:** Productos sugeridos basados en historial de compra
 
 #### Procedimiento
+
 1. **Identificar cliente** mediante búsqueda por múltiples criterios
 2. **Aplicar filtros** temporales y de categorización solicitados
 3. **Consultar transacciones** relacionadas en todas las tablas relevantes
@@ -245,18 +251,21 @@
 ### RF3.3: Gestionar comunicaciones con clientes
 
 #### Entradas
+
 - **Registros de interacción:** Llamadas, emails, visitas, reclamos, consultas
 - **Contenido de comunicación:** Mensaje, adjuntos, medio utilizado, resultado
 - **Programación:** Recordatorios, fechas de seguimiento, tareas pendientes
 - **Categorización:** Tipo de comunicación, prioridad, estado, responsable
 
 #### Salidas
+
 - **Timeline de interacciones:** Historial cronológico completo por cliente
 - **Alertas de seguimiento:** Recordatorios automáticos de tareas pendientes
 - **Reportes de gestión:** Estadísticas de atención, tiempo de respuesta, satisfacción
 - **Documentación:** Archivos organizados y asociados a cada cliente
 
 #### Procedimiento
+
 1. **Registrar interacción** con timestamp y usuario responsable
 2. **Asociar con cliente** mediante identificadores únicos
 3. **Categorizar comunicación** según tipos predefinidos
@@ -271,18 +280,21 @@
 ## Integraciones y Dependencias Técnicas
 
 ### Sistemas Relacionados
+
 - **Módulo de pedidos:** Para obtener historial completo de transacciones
 - **Sistema de productos:** Para análisis de preferencias y recomendaciones
 - **Motor de reportes:** Para generación de análisis estadísticos
 - **Sistema de notificaciones:** Para alertas y recordatorios automáticos
 
 ### Consideraciones de Privacidad
+
 - **Protección de datos personales:** Cumplimiento de normativas de privacidad
 - **Encriptación de información sensible:** Documentos de identidad, datos bancarios
 - **Control de acceso:** Restricción según roles y permisos de usuario
 - **Auditoría completa:** Registro de todos los accesos a información de clientes
 
 ### Optimizaciones de Rendimiento
+
 - **Índices compuestos:** Para búsquedas frecuentes por múltiples criterios
 - **Caché de consultas:** Para historiales que no cambian frecuentemente
 - **Paginación inteligente:** Para listas grandes de clientes o transacciones

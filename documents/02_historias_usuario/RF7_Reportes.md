@@ -222,18 +222,21 @@
 #### Formatos de Exportación
 
 **PDF:**
+
 - [ ] Formato profesional con header/footer
 - [ ] Gráficos de alta calidad
 - [ ] Logo de la empresa
 - [ ] Fecha de generación
 
 **Excel:**
+
 - [ ] Datos organizados en hojas separadas
 - [ ] Fórmulas para cálculos dinámicos
 - [ ] Formato condicional para destacar datos
 - [ ] Gráficos embebidos
 
 **CSV:**
+
 - [ ] Datos limpios para análisis externo
 - [ ] Encoding UTF-8 para caracteres especiales
 - [ ] Separadores apropiados
@@ -252,6 +255,7 @@
 ### RF7.1: Generar reportes de ventas, inventario y pedidos por cliente
 
 #### Entradas
+
 - **Parámetros de reporte:** Período de análisis, filtros por producto/cliente/categoría
 - **Criterios de agrupación:** Por día/semana/mes, por vendedor, por región
 - **Formato de salida:** PDF, Excel, CSV, visualización web
@@ -259,6 +263,7 @@
 - **Permisos de usuario:** Nivel de acceso a información sensible
 
 #### Salidas
+
 - **Reportes de ventas:** Análisis completo de ingresos, tendencias, comparativas
 - **Reportes de inventario:** Estado actual, rotación, alertas, valorización
 - **Reportes de clientes:** Comportamiento de compra, segmentación, valor lifetime
@@ -266,6 +271,7 @@
 - **Archivos exportables:** Documentos listos para distribución o análisis externo
 
 #### Procedimiento
+
 1. **Validar permisos** del usuario para acceder a datos solicitados
 2. **Procesar parámetros** de entrada y aplicar validaciones de rango
 3. **Construir consultas SQL** optimizadas con índices apropiados
@@ -280,18 +286,21 @@
 ### RF7.2: Dashboard de reportes
 
 #### Entradas
+
 - **Configuración de widgets:** Métricas favoritas, posición, tamaño
 - **Filtros globales:** Período por defecto, sucursal, vendedor
 - **Programación automática:** Frecuencia, destinatarios, formato
 - **Preferencias de usuario:** Dashboard personalizado, notificaciones
 
 #### Salidas
+
 - **Dashboard personalizable:** Vista unificada con KPIs principales
 - **Reportes programados:** Generación automática según schedule
 - **Alertas inteligentes:** Notificaciones por umbrales o anomalías
 - **Acceso rápido:** Enlaces directos a reportes detallados
 
 #### Procedimiento
+
 1. **Cargar configuración** personalizada del usuario
 2. **Obtener datos** de múltiples fuentes en paralelo
 3. **Calcular KPIs** en tiempo real con cache inteligente
@@ -306,18 +315,21 @@
 ### RF7.3: Reportes personalizados
 
 #### Entradas
+
 - **Query builder visual:** Campos, filtros, agrupaciones seleccionables
 - **Plantillas existentes:** Base para modificación y personalización
 - **Parámetros dinámicos:** Variables que se pueden cambiar en tiempo de ejecución
 - **Validaciones de negocio:** Reglas que aseguran coherencia de datos
 
 #### Salidas
+
 - **Reportes ad-hoc:** Informes únicos según necesidades específicas
 - **Plantillas guardadas:** Configuraciones reutilizables para futuro uso
 - **Queries optimizadas:** SQL generado eficientemente sin impacto en performance
 - **Validaciones automáticas:** Verificación de coherencia de datos mostrados
 
 #### Procedimiento
+
 1. **Mostrar interface** de query builder visual
 2. **Permitir selección** de tablas, campos y relaciones
 3. **Aplicar validaciones** de negocio según reglas establecidas
@@ -332,18 +344,21 @@
 ### RF7.4: Exportación y distribución
 
 #### Entradas
+
 - **Configuración de formato:** PDF con branding, Excel con fórmulas, CSV limpio
 - **Lista de destinatarios:** Emails, roles, grupos de distribución
 - **Programación de envío:** Frecuencia, horarios, condiciones de trigger
 - **Templates de email:** Asunto, cuerpo, formato de presentación
 
 #### Salidas
+
 - **Archivos formateados:** Documentos profesionales listos para distribución
 - **Emails automatizados:** Envío programado con adjuntos y contenido relevante
 - **Notificaciones de entrega:** Confirmación de envío exitoso o errores
 - **Logs de distribución:** Auditoría completa de reportes enviados
 
 #### Procedimiento
+
 1. **Aplicar template** corporativo según formato solicitado
 2. **Generar archivo** con optimizaciones según destino (compresión, resolución)
 3. **Validar contenido** antes de envío (datos completos, formato correcto)
@@ -358,18 +373,21 @@
 ## Arquitectura del Sistema de Reportes
 
 ### Motor de Reportes
+
 - **Query Engine:** Optimizador de consultas SQL con cache inteligente
 - **Template Engine:** Generador de documentos con formatos múltiples
 - **Scheduler:** Sistema de tareas programadas para reportes automáticos
 - **Export Engine:** Convertidores especializados por tipo de archivo
 
 ### Optimizaciones de Performance
+
 - **Vistas materializadas:** Para datos que cambian poco frecuentemente
 - **Índices columnares:** Para consultas analíticas complejas
 - **Particionamiento:** Datos históricos organizados por fecha
 - **Cache distribuido:** Redis para resultados de reportes frecuentes
 
 ### Integración con Business Intelligence
+
 - **APIs REST:** Para consumo desde herramientas externas (Power BI, Tableau)
 - **Conectores ODBC:** Acceso directo a datos desde Excel, Access
 - **Webhooks:** Notificaciones automáticas a sistemas externos
@@ -418,12 +436,14 @@ Para considerar completado el requerimiento RF7, se debe cumplir:
 ## Consideraciones Técnicas
 
 ### Optimización de Rendimiento
+
 - [ ] Uso de vistas materializadas para reportes frecuentes
 - [ ] Caché de reportes que no cambian frecuentemente
 - [ ] Procesamiento asíncrono para reportes complejos
 - [ ] Paginación para reportes con muchos datos
 
 ### Seguridad
+
 - [ ] Control de acceso basado en roles para reportes sensibles
 - [ ] Auditoría de quién genera qué reportes
 - [ ] Protección de datos personales en reportes exportados

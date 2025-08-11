@@ -239,12 +239,14 @@
 ### RF5.1: Autenticación de usuarios
 
 #### Entradas
+
 - **Credenciales de usuario:** Nombre de usuario y contraseña
 - **Información de sesión:** IP de origen, navegador, dispositivo
 - **Políticas de seguridad:** Reglas de contraseña, intentos permitidos, duración de sesión
 - **Tokens de seguridad:** Para autenticación multifactor si está habilitada
 
 #### Salidas
+
 - **Token de sesión:** JWT o cookie segura para mantener autenticación
 - **Perfil de usuario:** Información básica y roles asignados
 - **Permisos activos:** Lista de funcionalidades accesibles
@@ -252,6 +254,7 @@
 - **Alertas de seguridad:** Notificaciones por accesos sospechosos
 
 #### Procedimiento
+
 1. **Recibir credenciales** a través de formulario seguro con HTTPS
 2. **Validar formato** de usuario y contraseña según políticas
 3. **Consultar base de datos** para verificar existencia del usuario
@@ -266,12 +269,14 @@
 ### RF5.2: Gestión de roles (Administrador, Vendedor)
 
 #### Entradas
+
 - **Definición de roles:** Nombre, descripción, permisos específicos por módulo
 - **Asignación de usuarios:** Mapeo de usuarios a roles específicos
 - **Matriz de permisos:** CRUD detallado por cada funcionalidad del sistema
 - **Configuración de acceso:** Restricciones por IP, horarios, dispositivos
 
 #### Salidas
+
 - **Roles configurados:** Sistema de roles activo con permisos definidos
 - **Control de acceso:** Verificación automática en cada operación
 - **Mensajes de autorización:** Respuestas claras sobre permisos denegados
@@ -279,6 +284,7 @@
 - **Configuración exportable:** Backup de políticas de seguridad
 
 #### Procedimiento
+
 1. **Definir roles base** (Administrador, Vendedor) con permisos estándar
 2. **Crear matriz de permisos** detallada por cada endpoint/funcionalidad
 3. **Implementar middleware** de autorización en todas las rutas protegidas
@@ -293,18 +299,21 @@
 ### RF5.3: Auditoría y registros
 
 #### Entradas
+
 - **Eventos del sistema:** Todas las acciones de usuarios y sistema
 - **Contexto de seguridad:** Usuario, IP, timestamp, recurso accedido
 - **Configuración de auditoría:** Nivel de detalle, retención, filtros
 - **Criterios de búsqueda:** Filtros para consultas de logs
 
 #### Salidas
+
 - **Logs estructurados:** Registros en formato JSON para análisis
 - **Reportes de auditoría:** Resúmenes por período, usuario, acción
 - **Alertas de seguridad:** Detección automática de patrones sospechosos
 - **Exports de compliance:** Datos formateados para auditorías externas
 
 #### Procedimiento
+
 1. **Interceptar todas las acciones** mediante middleware universal
 2. **Extraer contexto completo** de cada operación realizada
 3. **Estructurar logs** con formato estándar y campos requeridos
@@ -319,18 +328,21 @@
 ## Arquitectura de Seguridad
 
 ### Componentes Principales
+
 - **Servidor de autenticación:** Manejo centralizado de credenciales y tokens
 - **Motor de autorización:** Evaluación de permisos en tiempo real
 - **Sistema de auditoría:** Captura y almacenamiento inmutable de eventos
 - **Monitor de seguridad:** Detección de anomalías y respuesta automática
 
 ### Tecnologías Implementadas
+
 - **Hashing de contraseñas:** bcrypt con salt único por usuario
 - **Tokens de sesión:** JWT con firma HMAC y expiración configurable
 - **Encriptación de datos:** AES-256 para información sensible
 - **Comunicación segura:** TLS 1.3 para todas las conexiones
 
 ### Políticas de Seguridad
+
 - **Contraseñas fuertes:** Mínimo 8 caracteres, mayúsculas, números, símbolos
 - **Bloqueo por intentos:** 5 intentos fallidos = bloqueo temporal de 15 minutos
 - **Expiración de sesión:** 30 minutos de inactividad o 8 horas máximo

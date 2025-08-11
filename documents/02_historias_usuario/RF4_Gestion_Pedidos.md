@@ -241,6 +241,7 @@
 ### RF4.1: Crear y hacer seguimiento de pedidos
 
 #### Entradas
+
 - **Información del cliente:** Identificador de cliente existente o datos para nuevo cliente
 - **Detalles del pedido:** Lista de productos, cantidades, precios, descuentos aplicables
 - **Datos de entrega:** Dirección, fecha estimada, instrucciones especiales, método de envío
@@ -248,6 +249,7 @@
 - **Usuario operador:** Vendedor o administrador autenticado con permisos
 
 #### Salidas
+
 - **Número de pedido:** Identificador único generado automáticamente
 - **Confirmación de pedido:** Documento PDF con detalles completos
 - **Reserva de stock:** Productos apartados del inventario disponible
@@ -255,6 +257,7 @@
 - **Estados actualizados:** Dashboard con progreso en tiempo real
 
 #### Procedimiento
+
 1. **Validar autenticación** del usuario y permisos para crear pedidos
 2. **Verificar cliente** existente o crear nuevo registro si es necesario
 3. **Validar disponibilidad** de stock para todos los productos solicitados
@@ -269,6 +272,7 @@
 ### RF4.2: Actualizar estado del pedido
 
 #### Entradas
+
 - **Identificador de pedido:** Número único para localizar el pedido específico
 - **Nuevo estado:** Pendiente, En Producción, Enviado, Entregado, Cancelado
 - **Notas de actualización:** Comentarios explicativos sobre el cambio de estado
@@ -276,6 +280,7 @@
 - **Usuario responsable:** Operador autorizado para realizar el cambio
 
 #### Salidas
+
 - **Confirmación de cambio:** Verificación del estado actualizado exitosamente
 - **Timeline actualizado:** Historial cronológico con todos los cambios
 - **Notificaciones automáticas:** Comunicación al cliente sobre el progreso
@@ -283,6 +288,7 @@
 - **Métricas actualizadas:** Dashboard con estadísticas de pedidos por estado
 
 #### Procedimiento
+
 1. **Localizar pedido** en base de datos usando identificador único
 2. **Validar transición** de estado según reglas de negocio establecidas
 3. **Verificar permisos** del usuario para realizar el cambio solicitado
@@ -297,12 +303,14 @@
 ### RF4.3: Cancelar pedidos
 
 #### Entradas
+
 - **Identificador de pedido:** Número único del pedido a cancelar
 - **Motivo de cancelación:** Razón específica (cliente, falta stock, error, otros)
 - **Autorización:** Confirmación del usuario con permisos para cancelación
 - **Información de reembolso:** Datos para procesamiento de devolución si aplica
 
 #### Salidas
+
 - **Confirmación de cancelación:** Verificación del pedido cancelado exitosamente
 - **Liberación de stock:** Productos devueltos al inventario disponible
 - **Documentos de cancelación:** Nota de crédito, comprobante de cancelación
@@ -310,6 +318,7 @@
 - **Registro de auditoría:** Trazabilidad completa de la acción realizada
 
 #### Procedimiento
+
 1. **Verificar estado actual** del pedido (solo cancelable antes de "Enviado")
 2. **Validar permisos** del usuario para realizar cancelaciones
 3. **Solicitar confirmación** explícita del usuario operador
@@ -324,6 +333,7 @@
 ## Integraciones y Dependencias del Sistema
 
 ### Módulos Relacionados
+
 - **Gestión de inventario:** Para verificación y actualización de stock en tiempo real
 - **Gestión de clientes:** Para validación de información y historial de compras
 - **Sistema de productos:** Para obtener precios, descripciones y disponibilidad
@@ -331,12 +341,14 @@
 - **Sistema de pagos:** Para procesamiento de transacciones y reembolsos
 
 ### APIs y Servicios Externos
+
 - **Servicios de mensajería:** Email, SMS para notificaciones a clientes
 - **Transportadoras:** Integración para generación de guías y seguimiento
 - **Pasarelas de pago:** Para procesamiento seguro de transacciones
 - **Sistemas ERP:** Si existe integración con contabilidad externa
 
 ### Consideraciones de Rendimiento
+
 - **Transacciones ACID:** Para garantizar consistencia en operaciones críticas
 - **Índices optimizados:** Para búsquedas rápidas por número, cliente, estado
 - **Cache de consultas:** Para reportes de estado que se consultan frecuentemente

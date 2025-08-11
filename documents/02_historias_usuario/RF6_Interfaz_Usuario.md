@@ -94,7 +94,7 @@
 
 #### Estructura de Menú
 
-```
+```plaintext
 📊 Dashboard
 📦 Productos
    ├── Lista de Productos
@@ -272,6 +272,7 @@
 ### RF6.1: Interfaz web responsive y panel administrativo
 
 #### Entradas
+
 - **Dispositivos objetivo:** Desktop (1920px+), Tablet (768-1024px), Móvil (320-767px)
 - **Datos del sistema:** Información de productos, clientes, pedidos, inventario
 - **Preferencias de usuario:** Configuración de dashboard, widgets personalizados
@@ -279,6 +280,7 @@
 - **Estados de aplicación:** Cargando, error, éxito, procesando
 
 #### Salidas
+
 - **Interfaces adaptativas:** Layouts que se ajustan automáticamente al dispositivo
 - **Dashboard personalizable:** Panel principal con widgets configurables
 - **Navegación intuitiva:** Menús y breadcrumbs consistentes
@@ -287,6 +289,7 @@
 - **Notificaciones claras:** Feedback inmediato de acciones del usuario
 
 #### Procedimiento
+
 1. **Detectar dispositivo** y resolución del usuario automáticamente
 2. **Cargar framework responsive** (Bootstrap) con breakpoints definidos
 3. **Renderizar componentes** según el tamaño de pantalla disponible
@@ -301,12 +304,14 @@
 ### RF6.2: Rendimiento y usabilidad
 
 #### Entradas
+
 - **Métricas de rendimiento:** Tiempo de carga, tiempo de respuesta, throughput
 - **Datos de usuario:** Patrones de navegación, acciones frecuentes, errores
 - **Configuración del servidor:** Capacidad, latencia de red, optimizaciones
 - **Feedback de usuarios:** Reportes de usabilidad, problemas identificados
 
 #### Salidas
+
 - **Páginas optimizadas:** Carga rápida con recursos minimizados
 - **Experiencia fluida:** Transiciones suaves y respuesta inmediata
 - **Indicadores de progreso:** Loading states para operaciones largas
@@ -314,6 +319,7 @@
 - **Métricas de rendimiento:** Dashboard con KPIs de performance
 
 #### Procedimiento
+
 1. **Implementar lazy loading** para componentes no críticos
 2. **Minimizar recursos** CSS, JavaScript y optimizar imágenes
 3. **Configurar caché** del navegador para recursos estáticos
@@ -328,12 +334,14 @@
 ## Arquitectura de Frontend
 
 ### Tecnologías Base
+
 - **Framework:** Blazor Server/WebAssembly según necesidades
 - **UI Framework:** Bootstrap 5 para responsividad y componentes
 - **Iconografía:** Font Awesome o Tabler Icons para consistencia
 - **Gráficos:** Chart.js o similar para visualizaciones de datos
 
 ### Componentes Reutilizables
+
 - **Layout maestro:** Header, sidebar, footer consistentes
 - **Formularios dinámicos:** Validación automática y campos reutilizables
 - **Tablas de datos:** Paginación, ordenamiento, filtros integrados
@@ -341,6 +349,7 @@
 - **Widgets de dashboard:** Métricas, gráficos, alertas personalizables
 
 ### Patrones de Diseño UX
+
 - **Consistent Navigation:** Menú principal siempre accesible
 - **Progressive Disclosure:** Información por niveles según necesidad
 - **Immediate Feedback:** Respuesta visual inmediata a todas las acciones
@@ -352,6 +361,7 @@
 ## Estándares de Interfaz
 
 ### Guía de Estilos
+
 - **Colores primarios:** Paleta consistente con identidad de Milaccesorios
 - **Tipografía:** Fuentes legibles con jerarquía clara (H1-H6)
 - **Espaciado:** Grid system de Bootstrap con márgenes consistentes
@@ -359,6 +369,7 @@
 - **Formularios:** Labels claros, placeholders útiles, validación visual
 
 ### Accesibilidad Web
+
 - **WCAG 2.1 Nivel A:** Compliance básico con estándares internacionales
 - **Contraste de colores:** Mínimo 4.5:1 para texto normal
 - **Navegación por teclado:** Tab order lógico en todos los formularios
@@ -366,6 +377,7 @@
 - **Texto alternativo:** Imágenes con alt text descriptivo
 
 ### Testing y Validación
+
 - **Cross-browser testing:** Chrome, Firefox, Safari, Edge
 - **Device testing:** Smartphones, tablets, desktop en diferentes resoluciones
 - **Performance testing:** Core Web Vitals, lighthouse scores

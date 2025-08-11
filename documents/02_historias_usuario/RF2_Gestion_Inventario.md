@@ -162,12 +162,14 @@
 ### RF2.1: Controlar el stock por producto
 
 #### Entradas
+
 - **Filtros de consulta:** Categoría, material, rango de stock, fechas
 - **Criterios de búsqueda:** Código de producto, nombre, SKU
 - **Ajustes de stock:** Cantidad, motivo, referencia, usuario responsable
 - **Datos de entrada:** Proveedor, lote, fecha, costo unitario, cantidad
 
 #### Salidas
+
 - **Reporte de stock:** Lista completa con disponibilidades actuales
 - **Historial de movimientos:** Registro cronológico de entradas/salidas
 - **Alertas automáticas:** Notificaciones de stock bajo o agotado
@@ -175,6 +177,7 @@
 - **Métricas:** Valor total de inventario, rotación de productos
 
 #### Procedimiento
+
 1. **Autenticar usuario** y validar permisos de acceso
 2. **Procesar filtros** y criterios de búsqueda aplicados
 3. **Consultar base de datos** con índices optimizados
@@ -188,12 +191,14 @@
 ### RF2.2: Generar alertas de inventario bajo
 
 #### Entradas
+
 - **Configuración de alertas:** Stock mínimo por producto, niveles de criticidad
 - **Parámetros de notificación:** Usuarios destinatarios, frecuencia, canales
 - **Umbrales personalizados:** Límites específicos por categoría o temporada
 - **Preferencias de usuario:** Tipos de alerta a recibir
 
 #### Salidas
+
 - **Alertas automáticas:** Notificaciones en tiempo real y programadas
 - **Panel de alertas:** Dashboard con estado actual de todas las alertas
 - **Reportes de alertas:** Estadísticas y tendencias de alertas generadas
@@ -201,6 +206,7 @@
 - **Recomendaciones:** Sugerencias de reabastecimiento automáticas
 
 #### Procedimiento
+
 1. **Monitorear niveles de stock** continuamente mediante jobs programados
 2. **Evaluar umbrales** configurados para cada producto
 3. **Generar alertas** cuando se superen los límites establecidos
@@ -215,12 +221,14 @@
 ## Dependencias Técnicas
 
 ### Integraciones Requeridas
+
 - **Sistema de productos:** Para obtener información básica y categorías
 - **Sistema de pedidos:** Para actualizar stock automáticamente tras ventas
 - **Sistema de notificaciones:** Para envío de alertas por email/SMS
 - **Sistema de reportes:** Para generación de informes consolidados
 
 ### Consideraciones de Rendimiento
+
 - **Índices de base de datos:** Optimizados para consultas frecuentes de stock
 - **Caché de consultas:** Para reportes que no cambian frecuentemente  
 - **Procesamiento asíncrono:** Para cálculos complejos de métricas
